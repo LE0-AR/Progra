@@ -1,22 +1,37 @@
-<?php
-require_once "Controller/Server/app.php";
-include_once "Controller/config/conexion.php";
-?>
-<!DOCTYPE html>
-<html lang="en">
+    <?php
+     include_once "Controller/Server/Validar.php"; 
+     ?>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+        <link rel="stylesheet" href="Model/css/login.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="Model/css/login.css">
-    <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script>
-    <?php include_once "Controller/Server/head.php"; ?>
-</head>
+        <?php include_once "Controller/Server/head.php"; ?>
+    </head>
+    <?php if (!empty($mensaje)): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                <?php if (!empty($redireccion)): ?>
+                    Swal.fire({
+                        title: '<?php echo $mensaje; ?>',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false
+                    }).then(() => {
+                        window.location.href = '<?php echo $redireccion; ?>';
+                    });
+                <?php else: ?>
+                    Swal.fire({
+                        title: 'Error',
+                        text: '<?php echo $mensaje; ?>',
+                        icon: 'error'
+                    });
+                <?php endif; ?>
+            });
+        </script>
+    <?php endif; ?>
+    <?php include_once "Controller/Ajax/login.php"; ?>
 
-<body>
-    <?php include_once "Views/login.php"; ?>
-    <?php require_once "Controller/Server/Validar.php"; ?>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</body>
+    </html>
 
-</html>
+    
