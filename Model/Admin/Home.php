@@ -24,7 +24,7 @@
                                 <p class="card-text">Acceder a los regritros de usuarios.</p>
                                 <div class="card-footer">
                                     <div class="btn-group">
-                                        <a type="button" class="btn btn-outline-success">Ver </a>
+                                        <a type="button" class="btn btn-outline-success" href="ListaUsuarios.php"> Ver </a>
                                     </div>
                                     <span class="time-text">Registros <p>150</p></span>
                                 </div>

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+    #content {
+        margin-top: 70px;
+        margin-left: 200px;
+        padding: 40px;
+        background-color: #f7f7f7;
+        min-height: calc(100vh - 70px);
+    }
+
+    /* Nuevos estilos para ajustar espaciado */
+    .content-header {
+        margin-bottom: 40px;
+        /* Más espacio después del título */
+    }
+
+    #btnAgregar {
+        margin-bottom: 30px;
+        /* Más espacio después del botón */
+    }
+
+    .table-responsive {
+        margin-top: 20px;
+        /* Espacio antes de la tabla */
+    }
+
+
+/*Alesrtas de agregar*//* --- Estilos para el formulario en SweetAlert2 --- */
+/* --- Estilos para el formulario GRID en SweetAlert2 --- */
+
+/* Estilo para el título, simulando el encabezado azul del ejemplo */
+.swal2-title {
+    background-color: #007bff; /* Un azul similar al del ejemplo */
+    color: white !important;
+    padding: 15px !important;
+    margin: -20px -20px 20px -20px; /* Ajusta para que ocupe todo el ancho */
+    border-radius: 5px 5px 0 0;
+    font-size: 1.25em !important;
+}
+
+/* El contenedor del formulario ahora es una parrilla (grid) */
+.swal-form-grid {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Columna 1: autoancho para etiquetas. Columna 2: el resto del espacio */
+    gap: 15px 10px; /* 15px de espacio vertical, 10px horizontal */
+    align-items: center; /* Centra verticalmente las etiquetas con sus campos */
+    text-align: left;
+}
+
+/* Estilo para las etiquetas en la parrilla */
+.swal-form-label {
+    justify-self: end; /* Alinea las etiquetas a la derecha */
+    font-weight: 600;
+    color: #444;
+}
+
+/* Asegura que los inputs usen todo el ancho de su columna */
+.swal-form-grid .swal2-input,
+.swal-form-grid .swal2-select {
+    width: 100% !important;
+    margin: 0 !important;
+}
