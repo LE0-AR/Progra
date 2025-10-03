@@ -1,5 +1,6 @@
 
-    <div id="content" class="flex-grow-1">
+
+<div id="content" class="flex-grow-1">
         <main>
             <section class="hero-section">
                 <div class="hero-container">
@@ -8,8 +9,8 @@
                         Panel de administarcion de usuarios, colaboradores, bitacoras y reportes.
                     </p>
                     <div>
-                        <a href="#" class="btn btn-outline-success">Ver colaboradores</a>
-                        <a href="#" class="btn btn-outline-success">Ver Bitacoras</a>
+                        <a href="Colaboradores.php" class="btn btn-outline-success">Ver colaboradores</a>
+                        <a href="Bitacora.php" class="btn btn-outline-success">Ver Bitacoras</a>
                     </div>
                 </div>
             </section>
@@ -26,7 +27,7 @@
                                     <div class="btn-group">
                                         <a type="button" class="btn btn-outline-success" href="ListaUsuarios.php"> Ver </a>
                                     </div>
-                                    <span class="time-text">Registros <p>150</p></span>
+                                    <span class="time-text">Registros <p><?php echo $totalUsuarios; ?></p></span>
                                 </div>
                             </div>
                         </div>
@@ -37,9 +38,9 @@
                                 <p class="card-text">Acceder al listado de los colaborador.</p>
                                 <div class="card-footer">
                                     <div class="btn-group">
-                                        <a type="button" class="btn btn-outline-success">Ver </a>
+                                        <a type="button" class="btn btn-outline-success" href="Colaboradores.php">Ver </a>
                                     </div>
-                                    <span class="time-text">Registros <p>150</p></span>
+                                    <span class="time-text">Registros <p><?php echo $totalColaboradores; ?></p></span>
                                 </div>
                             </div>
                         </div>
@@ -50,9 +51,9 @@
                                 <p class="card-text">Acceder al listado de las bitacoras.</p>
                                 <div class="card-footer">
                                     <div class="btn-group">
-                                       <a type="button" class="btn btn-outline-success">Ver </a>
+                                       <a type="button" class="btn btn-outline-success" href="Bitacora.php">Ver </a>
                                     </div>
-                                    <span class="time-text">Registros <p>150</p></span>
+                                    <span class="time-text">Registros <p><?php echo $totalBitacoras; ?></p></span>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,5 @@
 <?php
+
 require_once "Controller/Server/app.php";
 include_once "Controller/config/conexion.php";
 
@@ -39,4 +40,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
     $conexion->close();
 }
-?>
