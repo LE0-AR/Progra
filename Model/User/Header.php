@@ -9,7 +9,6 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../../Views/Admin/">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Reportes</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Acciones</a>
@@ -27,9 +26,7 @@
     <!-- Sidebar -->
     <div id="sidebar" class="border-end">
       <div class="list-group list-group-flush">
-        <a href="ListaUsuarios.php" class="list-group-item list-group-item-action">Usuarios</a>
-        <a href="Colaboradores.php" class="list-group-item list-group-item-action">Colaboradores</a>
-        <a href="Bitacora.php" class="list-group-item list-group-item-action">Bitacoras</a>
+        <a href="index.php" class="list-group-item list-group-item-action">Bitacoras</a>
         <a href="#" class="list-group-item list-group-item-action">Reporte</a>
       </div>
     </div>
@@ -95,13 +92,14 @@
       margin-left: -200px;
     }
   </style>
-  <script>
-    const toggleBtn = document.getElementById("menu-toggle");
-    const sidebar = document.getElementById("sidebar");
+     <script>
+        const toggleBtn = document.getElementById("menu-toggle");
+        const sidebar = document.getElementById("sidebar");
 
-    toggleBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("collapsed");
-    });
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+        });
 
-    // EDITAR con confirmación
-  </script>
+        // EDITAR con confirmación
+        
+    </script>

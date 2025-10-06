@@ -105,7 +105,7 @@ require_once "../../Controller/Config/Sesion.php";
             </table>
         </div>
     </div>
-    <script src="../../Model/js/Colaborador.js"></script>
+    <script src="../../Model/js/Usuario.js"></script>
 </body>
 
 </html>

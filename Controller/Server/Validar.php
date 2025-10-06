@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mensaje = "Bienvenido Administrador";
                 $redireccion = "Views/Admin/";
             } else if ($_SESSION['IdRol'] == 2) {
-                $mensaje = "Bienvenido Usuario";
+                $mensaje = "Bienvenido";
                 $redireccion = "Views/User/";
             }
         } else {

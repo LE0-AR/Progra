@@ -1,0 +1,36 @@
+# Evitar listado de directorios
+Options -Indexes
+
+# Activar reescritura
+RewriteEngine On
+RewriteBase /DW/Biticarora/app/
+
+# Permitir peticiones CORS (útil si usas fetch/AJAX)
+Header set Access-Control-Allow-Origin "*"
+
+# Redirigir www a non-www (opcional)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Forzar HTTPS (si tienes SSL, descomenta)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- BLOQUEAR ACCESO DIRECTO A CARPETAS INTERNAS ---
+RewriteRule ^(Controller|Model|Views|Admin|PDF|User)(/.*)?$ index.php [L,QSA]
+
+# --- EVITAR BUCLES ---
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# --- REGLA PRINCIPAL DE REESCRITURA ---
+RewriteRule ^(.*)$ index.php?views=$1 [QSA,L]
+
+# --- PÁGINA DE ERROR 404 PERSONALIZADA ---
+ErrorDocument 404 /DW/Biticarora/app/index.php
+
+# --- PROTEGER ARCHIVOS SENSIBLES ---
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>

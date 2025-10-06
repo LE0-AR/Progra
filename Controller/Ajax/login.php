@@ -12,11 +12,11 @@
                             <h3 class="text-center text-info">Sistema de Bitacora</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Usuario:</label><br>
-                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese su usuario">
+                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese su usuario" required>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Contraseña:</label><br>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
                             </div>
                             <div class="form-group">
                                 <br>
