@@ -1,36 +1,22 @@
-# Evitar listado de directorios
-Options -Indexes
-
-# Activar reescritura
+# Activar motor de reescritura
 RewriteEngine On
-RewriteBase /DW/Biticarora/app/
 
-# Permitir peticiones CORS (útil si usas fetch/AJAX)
-Header set Access-Control-Allow-Origin "*"
+# Definir la carpeta raíz de tu proyecto
+RewriteBase /DW/Biticarora/
 
-# Redirigir www a non-www (opcional)
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+# ----------------------------------------------------
+# Regla 1: Redirigir acceso a carpetas sensibles
+# ----------------------------------------------------
+# Si el usuario intenta acceder directamente a /app/Controller o /app/Model,
+# lo redirigimos al index.php dentro de nuestra base.
+RewriteCond %{REQUEST_URI} app/Controller/ [OR]
+RewriteCond %{REQUEST_URI} app/Model/
+RewriteRule .* index.php [L]
 
-# Forzar HTTPS (si tienes SSL, descomenta)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# --- BLOQUEAR ACCESO DIRECTO A CARPETAS INTERNAS ---
-RewriteRule ^(Controller|Model|Views|Admin|PDF|User)(/.*)?$ index.php [L,QSA]
-
-# --- EVITAR BUCLES ---
+# ----------------------------------------------------
+# Regla 2: Controlador frontal (URLs amigables)
+# ----------------------------------------------------
+# Si el archivo o carpeta no existe, redirigimos internamente a index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-# --- REGLA PRINCIPAL DE REESCRITURA ---
-RewriteRule ^(.*)$ index.php?views=$1 [QSA,L]
-
-# --- PÁGINA DE ERROR 404 PERSONALIZADA ---
-ErrorDocument 404 /DW/Biticarora/app/index.php
-
-# --- PROTEGER ARCHIVOS SENSIBLES ---
-<Files .htaccess>
-    Order Allow,Deny
-    Deny from all
-</Files>
+RewriteRule . index.php [L]

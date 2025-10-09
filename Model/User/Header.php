@@ -13,7 +13,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Acciones</a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="../../Controller/Config/Sesion_destroy.php">Cerrar sesion</a></li>
+              <li><a class="dropdown-item" href="../../Views//Lagout/Sesion_destroy.php">Cerrar sesion</a></li>
               <li><a class="dropdown-item" href="../../index.php">Cambiar cuenta</a></li>
             </ul>
           </li>

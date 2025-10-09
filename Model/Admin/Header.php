@@ -14,7 +14,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Acciones</a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="../../Controller/Config/Sesion_destroy.php">Cerrar sesion</a></li>
+              <li><a class="dropdown-item" href="../../Views//Lagout/Sesion_destroy.php">Cerrar sesion</a></li>
               <li><a class="dropdown-item" href="../../index.php">Cambiar cuenta</a></li>
             </ul>
           </li>
@@ -30,7 +30,7 @@
         <a href="ListaUsuarios.php" class="list-group-item list-group-item-action">Usuarios</a>
         <a href="Colaboradores.php" class="list-group-item list-group-item-action">Colaboradores</a>
         <a href="Bitacora.php" class="list-group-item list-group-item-action">Bitacoras</a>
-        <a href="#" class="list-group-item list-group-item-action">Reporte</a>
+        <a href="Reporte.php" class="list-group-item list-group-item-action">Reporte</a>
       </div>
     </div>
 

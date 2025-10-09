@@ -1,7 +1,4 @@
 <?php
-
-die("El script de logout SÍ se está ejecutando.");
-// Iniciar sesión si no está iniciada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -25,6 +22,6 @@ session_destroy();
 // setcookie('remember_me', '', time() - 42000, '/');
 
 // Redirigir al login (ajusta la ruta según tu proyecto)
-header("Location: ../../");
+header("Location: ../../../");
 exit();
 ?>
