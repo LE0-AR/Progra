@@ -1,22 +1,56 @@
-# Activar motor de reescritura
+# ========================================
+# 🔒 SEGURIDAD GLOBAL
+# ========================================
+
+# Evita listar el contenido de carpetas
+Options -Indexes
+
 RewriteEngine On
 
-# Definir la carpeta raíz de tu proyecto
-RewriteBase /DW/Biticarora/
+# IMPORTANTE: Define la carpeta base de tu proyecto
+RewriteBase /DW/Biticarora/app/
 
-# ----------------------------------------------------
-# Regla 1: Redirigir acceso a carpetas sensibles
-# ----------------------------------------------------
-# Si el usuario intenta acceder directamente a /app/Controller o /app/Model,
-# lo redirigimos al index.php dentro de nuestra base.
-RewriteCond %{REQUEST_URI} app/Controller/ [OR]
-RewriteCond %{REQUEST_URI} app/Model/
-RewriteRule .* index.php [L]
+# Bloquea acceso directo a archivos sensibles
+<FilesMatch "\.(htaccess|env|ini|log|sh|bat|sql)$">
+    Require all denied
+</FilesMatch>
 
-# ----------------------------------------------------
-# Regla 2: Controlador frontal (URLs amigables)
-# ----------------------------------------------------
-# Si el archivo o carpeta no existe, redirigimos internamente a index.php
+# ========================================
+# 🚫 BLOQUEO DE CARPETAS SENSIBLES
+# ========================================
+# 1. Excepción: PERMITIR el script para destruir la sesión.
+RewriteRule ^Controller/Config/Sesion_destroy\.php$ - [L]
+
+# 2. Ahora sí, REDIRIGIR el resto de las carpetas Config y Server.
+RewriteRule ^Controller/(Config|Server) /DW/Biticarora/app/ [R=302,L]
+
+# ========================================
+# ✅ REGLAS PARA LA CARPETAS MODEL Y VIEWS
+# ========================================
+# 1. PERMITIR acceso directo SOLO a las carpetas de recursos públicos dentro de Model.
+RewriteRule ^Model/(js|css|img)/ - [L]
+
+# 2. REDIRIGIR cualquier otro intento de acceso a 'Model' o 'Views/Admin'.
+RewriteRule ^Model/ /DW/Biticarora/app/ [R=302,L]
+
+
+# ========================================
+# ✅ PERMISOS DE CARPETAS LIBRES
+# ========================================
+# Permitir acceso normal a Controller/Ajax y la raíz de Views
+RewriteRule ^Controller/Ajax - [L]
+RewriteRule ^Views/$ - [L] # Se ajustó para que solo permita la raíz de Views
+
+# ========================================
+# ✅ PERMITIR JS, CSS, IMG, PDF, ETC.
+# ========================================
+<FilesMatch "\.(js|css|png|jpg|jpeg|gif|webp|svg|pdf|ico)$">
+    Require all granted
+</FilesMatch>
+
+# ========================================
+# 🚀 REDIRECCIÓN GLOBAL (MVC)
+# ========================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . index.php [L]
+RewriteRule ^ index.php [QSA,L]

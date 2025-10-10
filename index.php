@@ -1,11 +1,12 @@
     <?php
-     include_once "Controller/Server/Validar.php"; 
-     ?>
+    include_once "Controller/Server/Validar.php";
+    ?>
+
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
         <link rel="stylesheet" href="Model/css/login.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+        <link rel="shortcut icon" href="./Model/img/LOGO.png" type="image/x-icon">
         <?php include_once "Controller/Server/head.php"; ?>
     </head>
     <?php if (!empty($mensaje)): ?>
@@ -30,8 +31,6 @@
             });
         </script>
     <?php endif; ?>
-    <?php include_once "Controller/Ajax/login.php"; ?>
+    <?php include_once "./Controller/Ajax/login.php"; ?>
 
     </html>
-
-    

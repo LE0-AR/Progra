@@ -14,8 +14,9 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Acciones</a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="../../Views//Lagout/Sesion_destroy.php">Cerrar sesion</a></li>
-              <li><a class="dropdown-item" href="../../index.php">Cambiar cuenta</a></li>
+              
+              <li><a class="dropdown-item" href="<?php echo APP_URL; ?>/Controller/Config/Sesion_destroy.php">Cerrar sesion</a></li>
+              <li><a class="dropdown-item" href="<?php echo APP_URL; ?>">Cambiar cuenta</a></li>
             </ul>
           </li>
         </ul>
@@ -94,6 +95,10 @@
     #sidebar.collapsed {
       margin-left: -200px;
     }
+    .d-lex{
+      z-index: 100;
+    }
+  
   </style>
   <script>
     const toggleBtn = document.getElementById("menu-toggle");
@@ -105,3 +110,5 @@
 
     // EDITAR con confirmación
   </script>
+  
+  

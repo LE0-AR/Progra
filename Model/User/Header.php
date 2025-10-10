@@ -91,15 +91,99 @@
     #sidebar.collapsed {
       margin-left: -200px;
     }
+      #wrapper {
+            display: flex;
+        }
+
+        #sidebar {
+            /* El menú estará oculto fuera de la pantalla por defecto */
+            margin-left: -250px; 
+            min-width: 250px;
+            max-width: 250px;
+            height: 100vh; /* Ocupa toda la altura */
+            position: fixed; /* Fijo para que se superponga */
+            top: 0;
+            left: 0;
+            background: #f8f9fa;
+            z-index: 1031; /* Un z-index alto para que esté por encima de todo */
+            transition: margin-left 0.3s ease; /* Transición suave */
+            padding-top: 56px; /* Espacio para que no choque con el navbar */
+        }
+
+        /* La clase 'active' que añadimos con JS para MOSTRAR el menú */
+        #sidebar.active {
+            margin-left: 0;
+        }
+
+        #page-content-wrapper {
+            width: 100%;
+            padding-top: 56px; /* Espacio para el navbar fijo */
+        }
+
+        /* Para oscurecer el fondo cuando el menú está abierto en móvil */
+        .overlay {
+            display: none;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1030; /* Justo debajo del sidebar */
+        }
+        .overlay.active {
+            display: block;
+        }
+
+
+        /* --- Estilos para Escritorio (Pantallas más grandes de 768px) --- */
+        @media (min-width: 768px) {
+            #sidebar {
+                /* En escritorio, el menú no está fijo, es parte del flujo */
+                position: relative; 
+                /* Siempre visible y en su lugar por defecto */
+                margin-left: 0; 
+                padding-top: 0;
+            }
+
+            /* Cuando se colapsa en escritorio, se oculta con margen */
+            #sidebar.collapsed {
+                margin-left: -250px;
+            }
+            
+            #page-content-wrapper {
+                width: 100%;
+                padding-top: 56px;
+            }
+            
+            /* Ocultamos el fondo oscuro en escritorio */
+            .overlay {
+                display: none !important;
+            }
+        }
   </style>
-     <script>
-        const toggleBtn = document.getElementById("menu-toggle");
-        const sidebar = document.getElementById("sidebar");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("sidebar-toggle");
+      const sidebar = document.getElementById("sidebar");
 
-        toggleBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("collapsed");
+      toggleBtn.addEventListener("click", () => {
+        // En lugar de 'collapsed', usamos 'active' para mostrar/ocultar
+        sidebar.classList.toggle("active");
+
+        // También podrías añadir un overlay para el fondo en móvil
+        // (Esto es opcional pero recomendado)
+        const overlay = document.querySelector('.overlay');
+        if (overlay) {
+          overlay.classList.toggle('active');
+        }
+      });
+
+      // Opcional: Para cerrar el menú al hacer clic en el overlay
+      const overlay = document.querySelector('.overlay');
+      if (overlay) {
+        overlay.addEventListener('click', () => {
+          sidebar.classList.remove('active');
+          overlay.classList.remove('active');
         });
-
-        // EDITAR con confirmación
-        
-    </script>
+      }
+    });
+  </script>

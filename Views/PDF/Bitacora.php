@@ -1,7 +1,7 @@
 <?php
 require_once('../../Model/fpdf/fpdf.php');
 
-require_once('../Lagout/Sesion.php');
+require_once('../../Controller/Config/Sesion.php');
 // --- 1. CONEXIÓN SEGURA Y DATOS INICIALES ---
 
 // Inicializar conexión al principio

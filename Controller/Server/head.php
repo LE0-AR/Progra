@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="../../Model/img/LOGO.png" type="image/x-icon">
+<link rel="shortcut icon" href="<?php echo APP_URL; ?>/Model/img/LOGO.png" type="image/x-icon">
 
 <!-- jQuery (opcional, pero útil para simplificar el manejo del DOM) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -4,7 +4,8 @@ error_reporting(E_ERROR | E_PARSE);
 
 // --- INCLUDES ---
 require_once('../../Model/fpdf/fpdf.php');
-require_once('../Lagout/Sesion.php'); 
+
+require_once('../../Controller/Config/Sesion.php');
 
 // --- CLASE PDF PERSONALIZADA (Extiende FPDF) ---
 class PDF extends FPDF

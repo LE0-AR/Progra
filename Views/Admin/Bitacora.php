@@ -1,5 +1,6 @@
 <?php
 // 1. INCLUIR LA CONEXIÓN y sesión
+    require_once "../../Controller/Server/app.php";
 require_once "../../Controller/Config/Conexion.php";
 require_once "../../Controller/Config/Sesion.php";
 

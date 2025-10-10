@@ -8,7 +8,7 @@ if (isset($_POST['regresar'])) {
 	unset($_SESSION['departamento_id']);
 
 	// Redirige al mismo archivo actual (usando $_SERVER['PHP_SELF'])
-	header("Location: " . $_SERVER['PHP_SELF']);
+    header("Location: ../Reporte.php");
 	exit;
 }
 
@@ -65,26 +65,27 @@ $departamento_id = isset($_SESSION['departamento_id']) ? $_SESSION['departamento
 
 		.access-form {
 			background: #fff;
-			padding: 32px 40px;
-			border-radius: 12px;
-			box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+			padding: 16px 20px;
+			border-radius: 6px;
+			box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			min-width: 250px;
+			min-width: 125px;
 		}
 
 		.access-form h2 {
-			margin-bottom: 24px;
+			margin-bottom: 12px;
 			color: #273c75;
+			font-size: 14px;
 		}
 
 		.access-form input[type="text"] {
-			padding: 11px 16px;
+			padding: 6px 8px;
 			border: 1px solid #dcdde1;
-			border-radius: 6px;
-			font-size: 18px;
-			margin-bottom: 19px;
+			border-radius: 3px;
+			font-size: 9px;
+			margin-bottom: 9px;
 			width: 100%;
 			transition: border-color 0.2s;
 		}
@@ -98,9 +99,9 @@ $departamento_id = isset($_SESSION['departamento_id']) ? $_SESSION['departamento
 			background: linear-gradient(90deg, #4078c0 0%, #273c75 100%);
 			color: #fff;
 			border: none;
-			border-radius: 6px;
-			padding: 11px 32px;
-			font-size: 18px;
+			border-radius: 3px;
+			padding: 6px 16px;
+			font-size: 9px;
 			cursor: pointer;
 			transition: background 0.2s;
 		}
@@ -112,28 +113,28 @@ $departamento_id = isset($_SESSION['departamento_id']) ? $_SESSION['departamento
 		.report-title {
 			text-align: center;
 			color: #273c75;
-			margin-top: 48px;
-			font-size: 40px;
-			letter-spacing: 2px;
+			margin-top: 24px;
+			font-size: 20px;
+			letter-spacing: 1px;
 			font-weight: 700;
-			text-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+			text-shadow: 0 1px 4px rgba(44, 62, 80, 0.08);
 		}
 
 		.reportes-container {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 32px;
+			gap: 16px;
 			justify-content: center;
-			margin-top: 40px;
+			margin-top: 20px;
 		}
 
 		.reporte-card {
 			background: #fff;
-			border-radius: 10px;
-			box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
-			padding: 32px 24px;
-			min-width: 260px;
-			max-width: 320px;
+			border-radius: 5px;
+			box-shadow: 0 1px 6px rgba(44, 62, 80, 0.10);
+			padding: 16px 12px;
+			min-width: 130px;
+			max-width: 160px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -141,28 +142,28 @@ $departamento_id = isset($_SESSION['departamento_id']) ? $_SESSION['departamento
 		}
 
 		.reporte-card:hover {
-			transform: translateY(-6px) scale(1.03);
-			box-shadow: 0 6px 24px rgba(44, 62, 80, 0.13);
+			transform: translateY(-3px) scale(1.03);
+			box-shadow: 0 3px 12px rgba(44, 62, 80, 0.13);
 		}
 
 		.reporte-icon {
-			font-size: 45px;
+			font-size: 22px;
 			color: #4078c0;
-			margin-bottom: 16px;
+			margin-bottom: 8px;
 		}
 
 		.reporte-title {
-			font-size: 21px;
+			font-size: 10px;
 			font-weight: 600;
 			color: #273c75;
-			margin-bottom: 11px;
+			margin-bottom: 5px;
 			text-align: center;
 		}
 
 		.reporte-desc {
-			font-size: 16px;
+			font-size: 8px;
 			color: #636e72;
-			margin-bottom: 19px;
+			margin-bottom: 9px;
 			text-align: center;
 		}
 
@@ -170,9 +171,9 @@ $departamento_id = isset($_SESSION['departamento_id']) ? $_SESSION['departamento
 			background: #4078c0;
 			color: #fff;
 			border: none;
-			border-radius: 5px;
-			padding: 8px 24px;
-			font-size: 16px;
+			border-radius: 3px;
+			padding: 4px 12px;
+			font-size: 8px;
 			cursor: pointer;
 			transition: background 0.2s;
 			text-decoration: none;
@@ -189,6 +190,7 @@ $departamento_id = isset($_SESSION['departamento_id']) ? $_SESSION['departamento
 			}
 		}
 	</style>
+
 </head>
 
 <body>

@@ -1,4 +1,5 @@
 <?php
+require_once "../../Controller/Server/app.php";
 require_once "../../Controller/Config/Sesion.php";
 require_once "../../Controller/Config/Conexion.php";
 // Consultas para contar registros
@@ -13,9 +14,7 @@ $totalBitacoras = $conexion->query($sqlBitacoras)->fetch_assoc()['total'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
-    <link rel="stylesheet" href="../../Model/css/PanelAdmin.css">
 <?php
-require_once "../../Controller/Server/app.php";
 include "../../Controller/Server/head.php";
 ?>
 
